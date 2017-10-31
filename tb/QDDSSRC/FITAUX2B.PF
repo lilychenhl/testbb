@@ -1,0 +1,23 @@
+      *%CSTD===========================================================*
+      ** Application. : SAM        ARCAD Sample application            *
+      ** Component. . : FITAUX2B                      Type: PF         *
+      **===============================================================*
+      ** Sub-system . :                                                *
+      ** Function . . :                                                *
+      ** Sub-function :                                                *
+      **%S=============================================================*
+      ** Description of functions:                                     *
+      **                                                               *
+      **                                                               *
+      **                                                               *
+      **%E=============================================================*
+      ** AUTHOR:    VTAQUIN    26/08/2015 15:36  V 1.03.M              *
+      ** MODIFS: ** VTAQUIN    26/08/2015   :    V 1.03.M    00/       *
+      *%ECSTD==========================================================*
+     A                                      UNIQUE
+     A          R FITAUX
+     A            CDLBTX         3
+     A            LIBLTX        50
+     A            DATETX          L
+     A          K CDLBTX
+ 

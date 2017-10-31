@@ -1,0 +1,93 @@
+     --%CSTD===========================================================*
+     --* Application. : HG8 SGOMES V8                                  *
+     --* Composant. . : FM49                          Type: TABLE      *
+     --*===============================================================*
+     --* Sous-système :                                                *
+     --* Fonction . . :                                                *
+     --* Sous-fonction:                                                *
+     --*%S=============================================================*
+     --* Description des fonctionnalités:                              *
+     --*                                                               *
+     --*                                                               *
+     --*                                                               *
+     --*%E=============================================================*
+     --* AUTEUR:    SGOMES     21/07/2016 09:50  V 1.04.V              *
+     --* MODIFS: ** SGOMES     21/07/2016 09:50  V 1.04.V FM N°99/0510 *
+     --*           IR 99/0516 When printing HSW230, I have time to go  *
+     --%ECSTD==========================================================*
+--%EXECM ADDPFTRG FILE(FM49) TRGTIME(*AFTER) TRGEVENT(*DELETE)
+--%EXECM  PGM(*LIBL/ALXTBLTRG) RPLTRG(*NO)
+--%EXECM  ALWREPCHG(*NO) THDSAFE(*UNKNOWN)
+--%EXECM   MLTTHDACN(*SYSVAL)
+--%EXECM   TRG('FM49_DELETE_PROPAG')
+ 
+--  Generate SQL
+--  Version:                   V7R1M0 100423
+--  Generated on:              02/04/15 15:27:01
+--  Relational Database:       FORTAGI
+--  Standards Option:          DB2 for i
+ 
+CREATE TABLE FM49 (
+  OLD_KEY CHAR(26) CCSID 37 NOT NULL ,
+  OLD_DATA CHAR(370) CCSID 37 NOT NULL ,
+  CIRCULAIRE CHAR(4) CCSID 37 NOT NULL ,
+  MT_MIN DECIMAL(11, 2) NOT NULL ,
+  MT_MAX DECIMAL(11, 2) NOT NULL ,
+  CODE_PRIME CHAR(2) CCSID 37 NOT NULL ,
+  LIBELLE CHAR(50) CCSID 37 NOT NULL ,
+  CONSTRAINT Q_AGID051944_FM49_CIRCULAIRE_00001 PRIMARY KEY(
+  CIRCULAIRE , MT_MIN , MT_MAX ) )
+  ;
+ 
+ALTER TABLE FM49
+  ADD CONSTRAINT Q_AGID051944_FM49_OLD_KEY_00001
+  UNIQUE( OLD_KEY ) ;
+ 
+--  SQL1514   10   Schema qualifier in FM49U in AGID051944 was removed.
+--  SQL1514   10   Schema qualifier in FM49U in AGID051944 was removed.
+--  SQL1514   10   Schema qualifier in FM49U in AGID051944 was removed.
+--  SQL1514   10   Schema qualifier in FM49U in AGID051944 was removed.
+ 
+CREATE TRIGGER FM49I
+  BEFORE INSERT ON FM49
+  REFERENCING NEW AS NEWROW
+  FOR EACH ROW
+  MODE DB2ROW
+  SET OPTION  ALWBLK = *ALLREAD ,
+  ALWCPYDTA = *OPTIMIZE ,
+  COMMIT = *NONE ,
+  DECRESULT = (31, 31, 00) ,
+  DFTRDBCOL = *NONE ,
+  DLYPRP = *NO ,
+  DYNDFTCOL = *NO ,
+  DYNUSRPRF = *USER ,
+  SRTSEQ = *HEX
+  BEGIN ATOMIC SET NEWROW . OLD_KEY = '' CONCAT NEWROW . CIRCULAIRE CONCAT
+     NUM2ZONED ( TRIM (         CHAR ( NEWROW . MT_MIN ) ) , 11 , 2 ) CONCAT
+       NUM2ZONED ( TRIM (         CHAR ( NEWROW . MT_MAX ) ) , 11 , 2 ) ; SET NE
+WROW . OLD_DATA = '' CONCAT NEWROW . CODE_PRIME CONCAT NEWROW . LIBELLE ; END
+;
+--  SQL1514   10   Schema qualifier in FM49I in AGID051944 was removed.
+--  SQL1514   10   Schema qualifier in FM49I in AGID051944 was removed.
+--  SQL1514   10   Schema qualifier in FM49I in AGID051944 was removed.
+--  SQL1514   10   Schema qualifier in FM49I in AGID051944 was removed.
+ 
+CREATE TRIGGER FM49U
+  BEFORE UPDATE ON FM49
+  REFERENCING NEW AS NEWROW
+  FOR EACH ROW
+  MODE DB2ROW
+  SET OPTION  ALWBLK = *ALLREAD ,
+  ALWCPYDTA = *OPTIMIZE ,
+  COMMIT = *NONE ,
+  DECRESULT = (31, 31, 00) ,
+  DFTRDBCOL = *NONE ,
+  DLYPRP = *NO ,
+  DYNDFTCOL = *NO ,
+  DYNUSRPRF = *USER ,
+  SRTSEQ = *HEX
+  BEGIN ATOMIC SET NEWROW . OLD_KEY = '' CONCAT NEWROW . CIRCULAIRE CONCAT
+     NUM2ZONED ( TRIM (         CHAR ( NEWROW . MT_MIN ) ) , 11 , 2 ) CONCAT
+       NUM2ZONED ( TRIM (         CHAR ( NEWROW . MT_MAX ) ) , 11 , 2 ) ; SET NE
+WROW . OLD_DATA = '' CONCAT NEWROW . CODE_PRIME CONCAT NEWROW . LIBELLE ; END
+;

@@ -1,0 +1,28 @@
+     --%CSTD===========================================================*
+     --* Application. : HG8 SGOMES V8                                  *
+     --* Composant. . : NUM2ZONED                     Type: SQLUDF     *
+     --*===============================================================*
+     --* Sous-système :                                                *
+     --* Fonction . . :                                                *
+     --* Sous-fonction:                                                *
+     --*%S=============================================================*
+     --* Description des fonctionnalités:                              *
+     --*                                                               *
+     --*                                                               *
+     --*                                                               *
+     --*%E=============================================================*
+     --* AUTEUR:    SGOMES     21/07/2016 09:46  V 1.04.V              *
+     --* MODIFS: ** SGOMES     21/07/2016 09:46  V 1.04.V FM N°99/0510 *
+     --*           IR 99/0516 When printing HSW230, I have time to go  *
+     --%ECSTD==========================================================*
+     CREATE FUNCTION NUM2ZONED(VARCHAR(65), INTEGER, INTEGER)
+      RETURNS VARCHAR(65)
+      EXTERNAL NAME ALXSQLTB(NUM2ZONED)
+      LANGUAGE C
+      DETERMINISTIC
+      NO SQL
+      NOT FENCED
+      PROGRAM TYPE SUB
+      PARAMETER STYLE SQL
+      RETURNS NULL ON NULL INPUT
+      NO EXTERNAL ACTION;
