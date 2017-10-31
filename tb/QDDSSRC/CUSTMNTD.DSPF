@@ -1,0 +1,246 @@
+      *%CSTD===========================================================*
+      ** Application. : SAM        ARCAD Sample application            *
+      ** Composant. . : CUSTMNTD                      Type: DSPF       *
+      **===============================================================*
+      ** Sous-système : SHR Shared component                           *
+      ** Fonction . . :                                                *
+      ** Sous-fonction:                                                *
+      **%S=============================================================*
+      ** Description des fonctionnalités:                              *
+      **                                                               *
+      **                                                               *
+      **                                                               *
+      **%E=============================================================*
+      ** AUTEUR:    SCAGNON    27/03/2016 17:37  V 1.04.C              *
+      ** MODIFS: ** SCAGNON    27/03/2016 17:37  V 1.04.C FM 13/  960  *
+      **                                                               *
+      *%ECSTD==========================================================*
+     A*
+     A*
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      PRINT
+     A                                      CA03
+     A                                      CA12
+     A*
+     A*
+     A          R SFL1                      SFL
+     A                                      TEXT('Customer Subfile')
+     A  74                                  SFLNXTCHG
+     A            DBIDNM    R        H      REFFLD(PFR/DBIDNM *LIBL/CUSTPF)
+     A            OPTION         1A  B 10  3VALUES(' ' '2' '4' '5')
+     A            DBLNAM    R        O 10  9REFFLD(PFR/DBLNAM *LIBL/CUSTPF)
+     A            DBFNAM    R        O 10 32REFFLD(PFR/DBFNAM *LIBL/CUSTPF)
+     A            DBMINI    R        O 10 53REFFLD(PFR/DBMINI *LIBL/CUSTPF)
+     A            DBNNAM    R        O 10 61REFFLD(PFR/DBNNAM *LIBL/CUSTPF)
+     A                                 11  9'Address:'
+     A                                      DSPATR(HI)
+     A                                 12  9'City:'
+     A                                      DSPATR(HI)
+     A                                 12 43'State:'
+     A                                      DSPATR(HI)
+     A                                 12 60'Zip:'
+     A                                      DSPATR(HI)
+     A            DBADD1    R        O 11 18REFFLD(PFR/DBADD1 *LIBL/CUSTPF)
+     A            DBCITY    R        O 12 15REFFLD(PFR/DBCITY *LIBL/CUSTPF)
+     A            DBSTATE   R        O 12 50REFFLD(PFR/DBSTATE *LIBL/CUSTPF)
+     A            DBZIP     R        O 12 65REFFLD(PFR/DBZIP *LIBL/CUSTPF)
+     A*
+     A          R SF1CTL                    SFLCTL(SFL1)
+     A                                      CF06
+     A                                      ROLLUP(60 'Page Down')
+     A                                      CF16(16 'Printer Output')
+     A                                      CF17(17 'Messages')
+     A                                      OVERLAY
+     A                                      SFLCSRRRN(&CURSORROW)
+     A N32                                  SFLDSP
+     A N31                                  SFLDSPCTL
+     A  31                                  SFLCLR
+     A  90                                  SFLEND(*MORE)
+     A                                      SFLDROP(CF11)
+     A                                      SFLSIZ(0005)
+     A                                      SFLPAG(0004)
+     A            CURSORROW      5S 0H
+     A            RRN1           4S 0H      SFLRCDNBR
+     A                                  9  9'Last Name'
+     A                                      DSPATR(HI)
+     A                                  9 32'First Name'
+     A                                      DSPATR(HI)
+     A                                  9 53'MI'
+     A                                      DSPATR(HI)
+     A                                  9 61'Nick Name'
+     A                                      DSPATR(HI)
+     A                                  1 71DATE
+     A                                      EDTCDE(Y)
+     A                                  2 71TIME
+     A                                  1 30'Customer Maintenance'
+     A                                      DSPATR(HI)
+     A                                  4  2'Position to Last Name . . .'
+     A            PTNAME        20A  B  4 30
+     A                                  9  2'Opt'
+     A                                      DSPATR(HI)
+     A                                  6  2'Type options, press Enter.'
+     A                                      COLOR(BLU)
+     A                                  7  4'2=Change'
+     A                                      COLOR(BLU)
+     A                                  7 19'4=Delete'
+     A                                      COLOR(BLU)
+     A                                  7 34'5=Display'
+     A                                      COLOR(BLU)
+     A*
+     A          R PANEL1
+     A                                      TEXT('Change/Add Record Panel')
+     A            MODE          10A  O  1  3DSPATR(HI)
+     A                                  1 30'Customer Maintenance'
+     A                                      DSPATR(HI)
+     A                                  1 71DATE
+     A                                      EDTCDE(Y)
+     A                                  2 71TIME
+     A            DBIDNM    R        O  4 23REFFLD(PFR/DBIDNM *LIBL/CUSTPF)
+     A                                      DSPATR(HI)
+     A            DBFNAM    R        B  6 23REFFLD(PFR/DBFNAM *LIBL/CUSTPF)
+     A                                      CHECK(LC)
+     A            DBLNAM    R        B  8 23REFFLD(PFR/DBLNAM *LIBL/CUSTPF)
+     A                                      CHECK(LC)
+     A            DBMINI    R        B 10 23REFFLD(PFR/DBMINI *LIBL/CUSTPF)
+     A                                      CHECK(LC)
+     A            DBNNAM    R        B 12 23REFFLD(PFR/DBNNAM *LIBL/CUSTPF)
+     A                                      CHECK(LC)
+     A            DBADD1    R        B 14 23REFFLD(PFR/DBADD1 *LIBL/CUSTPF)
+     A                                      CHECK(LC)
+     A            DBADD2    R        B 16 23REFFLD(PFR/DBADD2 *LIBL/CUSTPF)
+     A                                      CHECK(LC)
+     A            DBADD3    R        B 18 23REFFLD(PFR/DBADD3 *LIBL/CUSTPF)
+     A                                      CHECK(LC)
+     A                                 23  2'F3=Exit'
+     A                                      COLOR(BLU)
+     A                                 23 12'F12=Cancel'
+     A                                      COLOR(BLU)
+     A                                  4  3'Customer Number . .'
+     A                                  6  3'First Name. . . . .'
+     A                                  8  3'Last Name . . . . .'
+     A                                 10  3'Middle Initial. . .'
+     A                                 12  3'Nick Name . . . . .'
+     A                                 14  3'Address Line 1. . .'
+     A                                 16  3'Address Line 2. . .'
+     A                                 18  3'Address Line 3. . .'
+     A                                 20  3'City/State/Zip. . .'
+     A            DBCITY    R        B 20 23REFFLD(PFR/DBCITY *LIBL/CUSTPF)
+     A                                      CHECK(LC)
+     A            DBSTATE   R        B 20 49REFFLD(PFR/DBSTATE *LIBL/CUSTPF)
+     A  30                                  ERRMSG('State code is invalid.')
+     A            DBZIP     R        B 20 52REFFLD(PFR/DBZIP *LIBL/CUSTPF)
+     A                                      CHECK(LC)
+     A                                  4 47'Credit Rating:'
+     A            DBCRATING R        B  4 62REFFLD(PFR/DBCRATING *LIBL/CUSTPF)
+     A                                      VALUES('A ' 'A+' 'A-' 'B ' 'B+' 'B--
+     A                                      ' 'C ' 'C+' 'C-' ' ')
+     A*
+     A          R PANEL2
+     A                                      TEXT('Display Record Panel')
+     A            MODE          10A  O  1  3DSPATR(HI)
+     A                                  1 30'Customer Maintenance'
+     A                                      DSPATR(HI)
+     A                                  1 71DATE
+     A                                      EDTCDE(Y)
+     A                                  2 71TIME
+     A            DBIDNM    R        O  4 20REFFLD(PFR/DBIDNM *LIBL/CUSTPF)
+     A                                      DSPATR(HI)
+     A            DBFNAM    R        O  6 20REFFLD(PFR/DBFNAM *LIBL/CUSTPF)
+     A                                      DSPATR(HI)
+     A            DBLNAM    R        O  8 20REFFLD(PFR/DBLNAM *LIBL/CUSTPF)
+     A                                      DSPATR(HI)
+     A            DBMINI    R        O 10 20REFFLD(PFR/DBMINI *LIBL/CUSTPF)
+     A                                      DSPATR(HI)
+     A            DBNNAM    R        O 12 20REFFLD(PFR/DBNNAM *LIBL/CUSTPF)
+     A                                      DSPATR(HI)
+     A            DBADD1    R        O 14 20REFFLD(PFR/DBADD1 *LIBL/CUSTPF)
+     A                                      DSPATR(HI)
+     A            DBADD2    R        O 16 20REFFLD(PFR/DBADD2 *LIBL/CUSTPF)
+     A                                      DSPATR(HI)
+     A            DBADD3    R        O 18 20REFFLD(PFR/DBADD3 *LIBL/CUSTPF)
+     A                                      DSPATR(HI)
+     A                                 23  2'F3=Exit'
+     A                                      COLOR(BLU)
+     A                                 23 12'F12=Cancel'
+     A                                      COLOR(BLU)
+     A                                  4  3'Customer Number.'
+     A                                  6  3'First Name . . .'
+     A                                  8  3'Last Name. . . .'
+     A                                 10  3'Middle Initial .'
+     A                                 12  3'Nick Name. . . .'
+     A                                 14  3'Address Line 1 .'
+     A                                 16  3'Address Line 2 .'
+     A                                 18  3'Address Line 3 .'
+     A                                 20  3'City/State/Zip .'
+     A            DBCITY    R        O 20 20REFFLD(PFR/DBCITY *LIBL/CUSTPF)
+     A                                      DSPATR(HI)
+     A            DBSTATE   R        O 20 46REFFLD(PFR/DBSTATE *LIBL/CUSTPF)
+     A                                      DSPATR(HI)
+     A            DBZIP     R        O 20 57REFFLD(PFR/DBZIP *LIBL/CUSTPF)
+     A                                      DSPATR(HI)
+     A                                  4 47'Credit Rating:'
+     A            DBCRATING R        O  4 62REFFLD(PFR/DBCRATING *LIBL/CUSTPF)
+     A                                      DSPATR(HI)
+     A*
+     A*
+     A          R SFL2                      SFL
+     A                                      TEXT('Confirm Delete Subfile')
+     A*
+     A            DBIDNM    R        H      REFFLD(PFR/DBIDNM *LIBL/CUSTPF)
+     A            DBLNAM    R        O  7  3REFFLD(PFR/DBLNAM *LIBL/CUSTPF)
+     A            DBFNAM    R        O  7 29REFFLD(PFR/DBFNAM *LIBL/CUSTPF)
+     A*
+     A*
+     A*
+     A          R SF2CTL                    SFLCTL(SFL2)
+     A                                      TEXT('Confirm Delete')
+     A                                      OVERLAY
+     A                                      SFLDSP
+     A N41                                  SFLDSPCTL
+     A  41                                  SFLCLR
+     A N41                                  SFLEND(*MORE)
+     A                                      SFLSIZ(0016)
+     A                                      SFLPAG(0015)
+     A            RRN2           4S 0H
+     A                                  3  3'Press Enter to confirm your choice-
+     A                                      s for Delete.'
+     A                                      COLOR(BLU)
+     A                                  4  3'Press F12=Cancel to return to chan-
+     A                                      ge your choices.'
+     A                                      COLOR(BLU)
+     A                                  6  3'Last Name'
+     A                                      DSPATR(HI)
+     A                                  6 29'First Name'
+     A                                      DSPATR(HI)
+     A                                  1 28'Confirm Delete of Records'
+     A                                      DSPATR(HI)
+     A*
+     A*
+     A*
+     A*
+     A          R FKEY1
+     A*
+     A                                 23  2'F3=Exit'
+     A                                      COLOR(BLU)
+     A                                 23 12'F6=Add'
+     A                                      COLOR(BLU)
+     A                                 23 39'F12=Cancel'
+     A                                      COLOR(BLU)
+     A                                 23 21'F11=Fold/Unfold'
+     A                                      COLOR(BLU)
+     A                                 24  2'F16=Printer Output'
+     A                                      COLOR(BLU)
+     A                                 24 23'F17=Messages'
+     A                                      COLOR(BLU)
+     A*
+     A          R FKEY2
+     A*
+     A                                 23  2'F3=Exit'
+     A                                      COLOR(BLU)
+     A                                    +3'F12=Cancel'
+     A                                      COLOR(BLU)
+     A          R FKEY3
+     A*
+     A                                 23  2'F12=Cancel'
+     A                                      COLOR(BLU)

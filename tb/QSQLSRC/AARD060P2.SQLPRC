@@ -1,0 +1,39 @@
+     --%CSTD===========================================================*
+     --* Application. : ARC ARCAD                                      *
+     --* Composant. . : AARD060P2                     Type: SQLPRC     *
+     --*===============================================================*
+     --* Sous-système : REP Repository - Référentiel avec notion de    *
+     --* Fonction . . : OBJ Référentiel objets (composants src+obj)    *
+     --* Sous-fonction: IFS Nom IFS des composants                     *
+     --*%S=============================================================*
+     --* Description des fonctionnalités:                              *
+     --*                                                               *
+     --*                                                               *
+     --*                                                               *
+     --*%E=============================================================*
+     --* AUTEUR:    GILBERT    19/11/2009 03:08  09.00.10              *
+     --* MODIFS: 01 GILBERT    13/12/2010 14:11  09.00.20 FM N°10/0305 *
+     --*           Modification après transformation unicode           *
+     --*         ** GILBERT    19/11/2009 03:08  09.00.10 FM N°09/0422 *
+     --*           Application Renommage des zones et composants       *
+     --*           ======> ART407P2   renommé en   AARD060P2   <====== *
+     --*         01 KDYKINS    19/11/2009 00:00  08.06.00 FM N°07/0056 *
+     --*           FA 06/0813 Pb livraison en Cum SQLPRC/SQLUDF de Ve  *
+     --*         ** GILBERT    28/12/2005 09:36    8.05.A FM N°05/0354 *
+     --*           FA 05/0355 Option 'Déplacer' sur objet IFS avec Je  *
+     --%ECSTD==========================================================*
+ 
+ 
+CREATE PROCEDURE IFS_IDGEN (
+    IN E_XPATHNAME GRAPHIC(755) CCSID 13488 ,
+    IN E_NLGMAXI DECIMAL(5, 0) ,
+    OUT E_CIDGEN GRAPHIC(10) CCSID 13488)
+  LANGUAGE RPGLE
+  SPECIFIC AARD060P2
+  NO SQL
+  EXTERNAL NAME             AARD060G2
+  PARAMETER STYLE SQL ;
+ 
+COMMENT ON SPECIFIC PROCEDURE AARD060P2
+  IS 'Get Id from Ifs Object' ;
+ 

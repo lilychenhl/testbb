@@ -1,0 +1,39 @@
+     --%CSTD===========================================================*
+     --* Application. : STD Standard application                       *
+     --* Component. . : CRTHS_5001                    Type: SQLPRC     *
+     --*===============================================================*
+     --* Sub-system . :                                                *
+     --* Function . . :                                                *
+     --* Sub-function :                                                *
+     --*%S=============================================================*
+     --* Description of functions:                                     *
+     --*                                                               *
+     --*                                                               *
+     --*                                                               *
+     --*%E=============================================================*
+     --* AUTHOR:    MICHEL     11/21/2012 06:31  V 1.00.D              *
+     --* MODIFS: ** MICHEL     11/21/2012 06:31  V 1.00.D MR # 12/0029 *
+     --*           Demo for INSDATA                                    *
+     --%ECSTD==========================================================*
+--  Generate SQL
+--  Version:                   V5R4M0 060210
+--  Generated on:              11/21/12 06:21:57
+--  Relational Database:       S654330E
+--  Standards Option:          DB2 UDB iSeries
+ 
+CREATE PROCEDURE CRTHSVORDER (
+  IN ORDERTYPE CHAR(3) ,
+  IN CUSTOMERID CHAR(8) ,
+  IN PRODUCTID CHAR(13) ,
+  IN PRODUCTDESCRIPTION CHAR(40) ,
+  IN PRODUCTPRICE DECIMAL(20, 5) ,
+  IN PRODUCTQUANTITY DECIMAL(15, 0) ,
+  IN ORDERNUMBER  DECIMAL( 8, 0) )
+  LANGUAGE RPGLE
+  SPECIFIC CRTHSVORDER
+  NOT DETERMINISTIC
+  CONTAINS SQL
+  CALLED ON NULL INPUT
+  EXTERNAL NAME HSR200ECS
+  PARAMETER STYLE GENERAL ;
+ 

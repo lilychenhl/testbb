@@ -1,0 +1,400 @@
+     --%CSTD===========================================================*
+     --* Application. : SGS        appli sgomes 08.06.00               *
+     --* Composant. . : CIAA01P0                      Type: TABLE      *
+     --*===============================================================*
+     --* Sous-système : TST test arborescence                          *
+     --* Fonction . . :                                                *
+     --* Sous-fonction:                                                *
+     --*%S=============================================================*
+     --* Description des fonctionnalités:                              *
+     --*                                                               *
+     --*                                                               *
+     --*                                                               *
+     --*%E=============================================================*
+     --* AUTEUR:                          00:00                        *
+     --* MODIFS: 01 SGOMES     15/07/2014 16:42  V 7.03.P FM 06/  566  *
+     --*           ARUHISF100000023OCHGMR3201099ARMMNTF10000020320109  *
+     --%ECSTD==========================================================*
+/* %EXECAM CALL UTIA007C PARM(&N &O '1' '99')               */
+ 
+--  Générer SQL
+--  Version :                   V5R3M0 040528
+--  Générée le :              06/06/05 09:04:40
+--  Base données relation :    S104FCCD
+--  Option normes :          DB2 UDB iSeries
+ 
+CREATE TABLE CIAA01P0 (
+  CENVIR CHAR(2) CCSID 297 NOT NULL ,
+  CPROMO CHAR(8) CCSID 297 NOT NULL ,
+  CDIVIS CHAR(1) CCSID 297 NOT NULL ,
+  L1ENOC CHAR(35) CCSID 297 NOT NULL ,
+  L2ENOC CHAR(35) CCSID 297              ,
+  LCENOC CHAR(15) CCSID 297              ,
+  LRENOC CHAR(35) CCSID 297              ,
+  LEMEOC CHAR(35) CCSID 297              ,
+  NAVAOC NUMERIC(2, 0) NOT NULL ,
+  CTCFOC CHAR(1) CCSID 297              ,
+  CLASOC CHAR(3) CCSID 297 NOT NULL ,
+  ILASOC CHAR(2) CCSID 297 NOT NULL DEFAULT    ,
+  CNATOC CHAR(1) CCSID 297 NOT NULL ,
+  INATOC CHAR(2) CCSID 297 NOT NULL DEFAULT    ,
+  CDEVIS CHAR(3) CCSID 297 NOT NULL ,
+  IDEVIS CHAR(2) CCSID 297 NOT NULL DEFAULT    ,
+  NBCDOC NUMERIC(3, 0) NOT NULL DEFAULT   ,
+  CEANOC CHAR(13) CCSID 297              ,
+  ITIERS CHAR(2) CCSID 297 NOT NULL DEFAULT    ,
+  CEANAG CHAR(13) CCSID 297              ,
+  IEANAG CHAR(2) CCSID 297 NOT NULL DEFAULT    ,
+  LCONOC CHAR(35) CCSID 297              ,
+  LMAIOC CHAR(50) CCSID 297              ,
+  LTELOC CHAR(24) CCSID 297              ,
+  LFAXOC CHAR(24) CCSID 297              ,
+  DENTOC DATE              ,
+  DDPROC DATE NOT NULL ,
+  DFPROC DATE NOT NULL ,
+  DDAPOC DATE NOT NULL ,
+  DFAPOC DATE NOT NULL ,
+  DAPPDE DATE              ,
+  DAPPFI DATE              ,
+  CENSEI CHAR(13) CCSID 297              ,
+  IENSEI CHAR(2) CCSID 297 NOT NULL DEFAULT    ,
+  CFDVFI CHAR(5) CCSID 297              ,
+  IFDVFI CHAR(2) CCSID 297 NOT NULL DEFAULT    ,
+  BI01OC NUMERIC(1, 0) NOT NULL DEFAULT   ,
+  BI02OC NUMERIC(1, 0) NOT NULL DEFAULT   ,
+  BI03OC NUMERIC(1, 0) NOT NULL DEFAULT   ,
+  BI04OC NUMERIC(1, 0) NOT NULL DEFAULT   ,
+  BI05OC NUMERIC(1, 0) NOT NULL DEFAULT   ,
+  BI06OC NUMERIC(1, 0) NOT NULL DEFAULT   ,
+  BI07OC NUMERIC(1, 0) NOT NULL DEFAULT   ,
+  BI08OC NUMERIC(1, 0) NOT NULL DEFAULT   ,
+  BI09OC NUMERIC(1, 0) NOT NULL DEFAULT   ,
+  BI10OC NUMERIC(1, 0) NOT NULL DEFAULT   ,
+  CS01OC CHAR(4) CCSID 297              ,
+  CS02OC CHAR(4) CCSID 297              ,
+  CS03OC CHAR(4) CCSID 297              ,
+  CS04OC CHAR(4) CCSID 297              ,
+  CS05OC CHAR(4) CCSID 297              ,
+  CS06OC CHAR(4) CCSID 297              ,
+  CS07OC CHAR(4) CCSID 297              ,
+  CS08OC CHAR(4) CCSID 297              ,
+  CS09OC CHAR(4) CCSID 297              ,
+  CS10OC CHAR(4) CCSID 297              ,
+  CSETOC CHAR(50) CCSID 297              ,
+  BANNUL NUMERIC(1, 0) NOT NULL DEFAULT   ,
+  DANNUL DATE              ,
+  CPGMCR CHAR(10) CCSID 297              ,
+  CUSRCR CHAR(10) CCSID 297              ,
+  TCREAT TIMESTAMP NOT NULL DEFAULT                   ,
+  CPGMMO CHAR(10) CCSID 297              ,
+  CUSRMO CHAR(10) CCSID 297              ,
+  TMODIF TIMESTAMP NOT NULL DEFAULT                   ,
+  OSTS01 CHAR(1) CCSID 297              ,
+  OSTS02 CHAR(1) CCSID 297              ,
+  OSTS03 CHAR(1) CCSID 297              ,
+  OSTS04 CHAR(1) CCSID 297              ,
+  OSTS05 CHAR(1) CCSID 297              ,
+  OBOO01 NUMERIC(1, 0) NOT NULL DEFAULT   ,
+  OBOO02 NUMERIC(1, 0) NOT NULL DEFAULT   ,
+  OBOO03 NUMERIC(1, 0) NOT NULL DEFAULT   ,
+  OBOO04 NUMERIC(1, 0) NOT NULL DEFAULT   ,
+  OBOO05 NUMERIC(1, 0) NOT NULL DEFAULT   ,
+  ODAT01 DATE              ,
+  ODAT02 DATE              ,
+  OCAR01 CHAR(35) CCSID 297              ,
+  ONUM01 NUMERIC(13, 4)              ,
+  ONUM02 NUMERIC(13, 4)              ,
+  SSTS01 CHAR(1) CCSID 297              ,
+  SSTS02 CHAR(1) CCSID 297              ,
+  SSTS03 CHAR(1) CCSID 297              ,
+  SSTS04 CHAR(1) CCSID 297              ,
+  SSTS05 CHAR(1) CCSID 297              ,
+  SBOO01 NUMERIC(1, 0) NOT NULL DEFAULT   ,
+  SBOO02 NUMERIC(1, 0) NOT NULL DEFAULT   ,
+  SBOO03 NUMERIC(1, 0) NOT NULL DEFAULT   ,
+  SBOO04 NUMERIC(1, 0) NOT NULL DEFAULT   ,
+  SBOO05 NUMERIC(1, 0) NOT NULL DEFAULT   ,
+  SDAT01 DATE              ,
+  SDAT02 DATE              ,
+  SCAR01 CHAR(35) CCSID 297              ,
+  SNUM01 NUMERIC(13, 4)              ,
+  SNUM02 NUMERIC(13, 4)              ,
+  GTRGBE CHAR(1) CCSID 297              ,
+  GTRGAF CHAR(1) CCSID 297              ,
+  CUSROC CHAR(10) CCSID 297              ,
+  NORDRE NUMERIC(3, 0)                   ,
+  NDELOC NUMERIC(3, 0)                   ,
+  NDE1OC NUMERIC(3, 0)                   ,
+  NDE2OC NUMERIC(3, 0)                   ,
+  BEDFOC NUMERIC(1, 0) NOT NULL DEFAULT   ,
+  CONSTRAINT PK_CIAA01P0 PRIMARY KEY( CENVIR , CPROMO ) ) ;
+ 
+ALTER TABLE CIAA01P0
+  ADD CONSTRAINT FK_CIAA01_CIAA92
+  FOREIGN KEY( NAVAOC )
+  REFERENCES CIAA92P0 ( NAVAOC )
+  ON DELETE RESTRICT
+  ON UPDATE NO ACTION ;
+ 
+ALTER TABLE CIAA01P0
+  ADD CONSTRAINT FK_CIAA01_CIAA93
+  FOREIGN KEY( INATOC , CNATOC )
+  REFERENCES CIAA93P0 ( CENVIR , CNATOC )
+  ON DELETE RESTRICT
+  ON UPDATE NO ACTION ;
+ 
+ALTER TABLE CIAA01P0
+  ADD CONSTRAINT FK_CIAA01_CIAA90
+  FOREIGN KEY( ILASOC , CLASOC )
+  REFERENCES CIAA90P0 ( CENVIR , CLASOC )
+  ON DELETE RESTRICT
+  ON UPDATE NO ACTION ;
+ 
+ALTER TABLE CIAA01P0
+  ADD CONSTRAINT FK_CIAA01_GENT01
+  FOREIGN KEY( ITIERS , CEANOC )
+  REFERENCES GENT01P0 ( CENVIR , CEANCL )
+  ON DELETE RESTRICT
+  ON UPDATE NO ACTION ;
+ 
+ALTER TABLE CIAA01P0
+  ADD CONSTRAINT FK_CIAA01_GENP02
+  FOREIGN KEY( IDEVIS , CDEVIS )
+  REFERENCES GENP02P0 ( CENVIR , CDEVIS )
+  ON DELETE RESTRICT
+  ON UPDATE NO ACTION ;
+ 
+ALTER TABLE CIAA01P0
+  ADD CONSTRAINT FK_CIAA01_GENC54
+  FOREIGN KEY( IFDVFI , CFDVFI )
+  REFERENCES GENC54P0 ( CENVIR , CFDVFI )
+  ON DELETE RESTRICT
+  ON UPDATE NO ACTION ;
+ 
+ALTER TABLE CIAA01P0
+  ADD CONSTRAINT FK_CIAA01_GENC56
+  FOREIGN KEY( IEANAG , CEANAG )
+  REFERENCES GENC56P0 ( CENVIR , CEANAG )
+  ON DELETE RESTRICT
+  ON UPDATE NO ACTION ;
+ 
+ALTER TABLE CIAA01P0
+  ADD CONSTRAINT FK_CIAA01_GENC20
+  FOREIGN KEY( IENSEI , CENSEI )
+  REFERENCES GENC20P0 ( CENVIR , CENSEI )
+  ON DELETE RESTRICT
+  ON UPDATE NO ACTION ;
+ 
+LABEL ON TABLE CIAA01P0
+  IS 'Entête opération ciale' ;
+ 
+LABEL ON COLUMN CIAA01P0
+( CENVIR IS 'Environnement' ,
+  CPROMO IS 'Code OC' ,
+  CDIVIS IS 'Division ciale' ,
+  L1ENOC IS 'Libellé 1' ,
+  L2ENOC IS 'Libellé 2' ,
+  LCENOC IS 'Libellé court' ,
+  LRENOC IS 'Référence client' ,
+  LEMEOC IS 'Emetteur' ,
+  NAVAOC IS 'Avancement' ,
+  CTCFOC IS 'Confirmation' ,
+  CLASOC IS 'Classe aut' ,
+  ILASOC IS 'Env classe aut' ,
+  CNATOC IS 'Nature OC' ,
+  INATOC IS 'Env nature OC' ,
+  CDEVIS IS 'Devise OC' ,
+  IDEVIS IS 'Env devise' ,
+  NBCDOC IS 'Nb Cdes Liv' ,
+  CEANOC IS 'Client négociateur' ,
+  ITIERS IS 'Env client' ,
+  CEANAG IS 'Agent négociateur' ,
+  IEANAG IS 'Env agent' ,
+  LCONOC IS 'Contact' ,
+  LMAIOC IS 'Mail' ,
+  LTELOC IS 'Téléphone' ,
+  LFAXOC IS 'Fax' ,
+  DENTOC IS 'Date entretien' ,
+  DDPROC IS 'Début promo' ,
+  DFPROC IS 'Fin promo' ,
+  DDAPOC IS 'Début appro' ,
+  DFAPOC IS 'Fin appro' ,
+  DAPPDE IS 'Début ciale' ,
+  DAPPFI IS 'Fin ciale' ,
+  CENSEI IS 'Enseigne' ,
+  IENSEI IS 'Env enseigne' ,
+  CFDVFI IS 'Zone FDV' ,
+  IFDVFI IS 'Env FDV' ,
+  BI01OC IS 'OC prix spécial' ,
+  BI02OC IS 'OC remise SF' ,
+  BI03OC IS 'OC produit' ,
+  BI04OC IS 'OC différé' ,
+  BI05OC IS 'OC NIP' ,
+  BI06OC IS 'OC libre 1' ,
+  BI07OC IS 'OC libre 2' ,
+  BI08OC IS 'OC libre 3' ,
+  BI09OC IS 'OC libre 4' ,
+  BI10OC IS 'OC libre 5' ,
+  CS01OC IS 'Stat OC 01' ,
+  CS02OC IS 'Stat OC 02' ,
+  CS03OC IS 'Stat OC 03' ,
+  CS04OC IS 'Stat OC 04' ,
+  CS05OC IS 'Stat OC 05' ,
+  CS06OC IS 'Stat OC 06' ,
+  CS07OC IS 'Stat OC 07' ,
+  CS08OC IS 'Stat OC 08' ,
+  CS09OC IS 'Stat OC 09' ,
+  CS10OC IS 'Stat OC 10' ,
+  CSETOC IS 'Stat recherche' ,
+  BANNUL IS 'Désactivation' ,
+  DANNUL IS 'Désactivation' ,
+  CPGMCR IS 'Programme création' ,
+  CUSRCR IS 'Utilisateur création' ,
+  TCREAT IS 'Date Heure création' ,
+  CPGMMO IS 'Programme modif' ,
+  CUSRMO IS 'Utilisateur modif' ,
+  TMODIF IS 'Date Heure modif' ,
+  OSTS01 IS 'Statut dispo 1' ,
+  OSTS02 IS 'Statut dispo 2' ,
+  OSTS03 IS 'Statut dispo 3' ,
+  OSTS04 IS 'Statut dispo 4' ,
+  OSTS05 IS 'Statut dispo 5' ,
+  OBOO01 IS 'Booléen dispo 1' ,
+  OBOO02 IS 'Booléen dispo 2' ,
+  OBOO03 IS 'Booléen dispo 3' ,
+  OBOO04 IS 'Booléen dispo 4' ,
+  OBOO05 IS 'Booléen dispo 5' ,
+  ODAT01 IS 'Date dispo 1' ,
+  ODAT02 IS 'Date dispo 2' ,
+  OCAR01 IS 'Zone dispo 1' ,
+  ONUM01 IS 'Num dispo 1' ,
+  ONUM02 IS 'Num dispo 2' ,
+  SSTS01 IS 'Statut spécif 1' ,
+  SSTS02 IS 'Statut spécif 2' ,
+  SSTS03 IS 'Statut spécif 3' ,
+  SSTS04 IS 'Statut spécif 4' ,
+  SSTS05 IS 'Statut spécif 5' ,
+  SBOO01 IS 'Booléen spécif 1' ,
+  SBOO02 IS 'Booléen spécif 2' ,
+  SBOO03 IS 'Booléen spécif 3' ,
+  SBOO04 IS 'Booléen spécif 4' ,
+  SBOO05 IS 'Booléen spécif 5' ,
+  SDAT01 IS 'Date spécif 1' ,
+  SDAT02 IS 'Date spécif 2' ,
+  SCAR01 IS 'Zone spécif 1' ,
+  SNUM01 IS 'Num spécif 1' ,
+  SNUM02 IS 'Num spécif 2' ,
+  GTRGBE IS 'Trigger BEFORE' ,
+  GTRGAF IS 'Trigger AFTER'  ,
+  CUSROC IS 'User validation' ,
+  NORDRE IS 'N° ordre' ,
+  NDELOC IS 'Délai opération' ,
+  NDE1OC IS 'Délai 1 validité' ,
+  NDE2OC IS 'Délai 2 validité' ,
+  BEDFOC IS 'Edition fiche OC' ) ;
+ 
+LABEL ON COLUMN CIAA01P0
+( CENVIR TEXT IS 'Environnement' ,
+  CPROMO TEXT IS 'Code OC' ,
+  CDIVIS TEXT IS 'Division ciale' ,
+  L1ENOC TEXT IS 'Libellé 1' ,
+  L2ENOC TEXT IS 'Libellé 2' ,
+  LCENOC TEXT IS 'Libellé court' ,
+  LRENOC TEXT IS 'Référence client' ,
+  LEMEOC TEXT IS 'Emetteur' ,
+  NAVAOC TEXT IS 'Avancement' ,
+  CTCFOC TEXT IS 'Confirmation' ,
+  CLASOC TEXT IS 'Classe aut' ,
+  ILASOC TEXT IS 'Env classe aut' ,
+  CNATOC TEXT IS 'Nature OC' ,
+  INATOC TEXT IS 'Env nature OC' ,
+  CDEVIS TEXT IS 'Devise OC' ,
+  IDEVIS TEXT IS 'Env devise' ,
+  NBCDOC TEXT IS 'Nb Cdes Liv' ,
+  CEANOC TEXT IS 'Client négociateur' ,
+  ITIERS TEXT IS 'Env client' ,
+  CEANAG TEXT IS 'Agent négociateur' ,
+  IEANAG TEXT IS 'Env agent' ,
+  LCONOC TEXT IS 'Contact' ,
+  LMAIOC TEXT IS 'Mail' ,
+  LTELOC TEXT IS 'Téléphone' ,
+  LFAXOC TEXT IS 'Fax' ,
+  DENTOC TEXT IS 'Date entretien' ,
+  DDPROC TEXT IS 'Début promo' ,
+  DFPROC TEXT IS 'Fin promo' ,
+  DDAPOC TEXT IS 'Début appro' ,
+  DFAPOC TEXT IS 'Fin appro' ,
+  DAPPDE TEXT IS 'Début ciale' ,
+  DAPPFI TEXT IS 'Fin ciale' ,
+  CENSEI TEXT IS 'Enseigne' ,
+  IENSEI TEXT IS 'Env enseigne' ,
+  CFDVFI TEXT IS 'Zone FDV' ,
+  IFDVFI TEXT IS 'Env FDV' ,
+  BI01OC TEXT IS 'OC prix spécial' ,
+  BI02OC TEXT IS 'OC remise SF' ,
+  BI03OC TEXT IS 'OC produit' ,
+  BI04OC TEXT IS 'OC différé' ,
+  BI05OC TEXT IS 'OC NIP' ,
+  BI06OC TEXT IS 'OC libre 1' ,
+  BI07OC TEXT IS 'OC libre 2' ,
+  BI08OC TEXT IS 'OC libre 3' ,
+  BI09OC TEXT IS 'OC libre 4' ,
+  BI10OC TEXT IS 'OC libre 5' ,
+  CS01OC TEXT IS 'Stat OC 01' ,
+  CS02OC TEXT IS 'Stat OC 02' ,
+  CS03OC TEXT IS 'Stat OC 03' ,
+  CS04OC TEXT IS 'Stat OC 04' ,
+  CS05OC TEXT IS 'Stat OC 05' ,
+  CS06OC TEXT IS 'Stat OC 06' ,
+  CS07OC TEXT IS 'Stat OC 07' ,
+  CS08OC TEXT IS 'Stat OC 08' ,
+  CS09OC TEXT IS 'Stat OC 09' ,
+  CS10OC TEXT IS 'Stat OC 10' ,
+  CSETOC TEXT IS 'Stat recherche' ,
+  BANNUL TEXT IS 'Désactivation' ,
+  DANNUL TEXT IS 'Désactivation' ,
+  CPGMCR TEXT IS 'Programme création' ,
+  CUSRCR TEXT IS 'Utilisateur création' ,
+  TCREAT TEXT IS 'Date Heure création' ,
+  CPGMMO TEXT IS 'Programme modif' ,
+  CUSRMO TEXT IS 'Utilisateur modif' ,
+  TMODIF TEXT IS 'Date Heure modif' ,
+  OSTS01 TEXT IS 'Statut dispo 1' ,
+  OSTS02 TEXT IS 'Statut dispo 2' ,
+  OSTS03 TEXT IS 'Statut dispo 3' ,
+  OSTS04 TEXT IS 'Statut dispo 4' ,
+  OSTS05 TEXT IS 'Statut dispo 5' ,
+  OBOO01 TEXT IS 'Booléen dispo 1' ,
+  OBOO02 TEXT IS 'Booléen dispo 2' ,
+  OBOO03 TEXT IS 'Booléen dispo 3' ,
+  OBOO04 TEXT IS 'Booléen dispo 4' ,
+  OBOO05 TEXT IS 'Booléen dispo 5' ,
+  ODAT01 TEXT IS 'Date dispo 1' ,
+  ODAT02 TEXT IS 'Date dispo 2' ,
+  OCAR01 TEXT IS 'Zone dispo 1' ,
+  ONUM01 TEXT IS 'Num dispo 1' ,
+  ONUM02 TEXT IS 'Num dispo 2' ,
+  SSTS01 TEXT IS 'Statut spécif 1' ,
+  SSTS02 TEXT IS 'Statut spécif 2' ,
+  SSTS03 TEXT IS 'Statut spécif 3' ,
+  SSTS04 TEXT IS 'Statut spécif 4' ,
+  SSTS05 TEXT IS 'Statut spécif 5' ,
+  SBOO01 TEXT IS 'Booléen spécif 1' ,
+  SBOO02 TEXT IS 'Booléen spécif 2' ,
+  SBOO03 TEXT IS 'Booléen spécif 3' ,
+  SBOO04 TEXT IS 'Booléen spécif 4' ,
+  SBOO05 TEXT IS 'Booléen spécif 5' ,
+  SDAT01 TEXT IS 'Date spécif 1' ,
+  SDAT02 TEXT IS 'Date spécif 2' ,
+  SCAR01 TEXT IS 'Zone spécif 1' ,
+  SNUM01 TEXT IS 'Num spécif 1' ,
+  SNUM02 TEXT IS 'Num spécif 2' ,
+  GTRGBE TEXT IS 'Trigger BEFORE' ,
+  GTRGAF TEXT IS 'Trigger AFTER'  ,
+  CUSROC TEXT IS 'User validation' ,
+  NORDRE TEXT IS 'N° ordre' ,
+  NDELOC TEXT IS 'Délai opération' ,
+  NDE1OC TEXT IS 'Délai 1 validité' ,
+  NDE2OC TEXT IS 'Délai 2 validité' ,
+  BEDFOC TEXT IS 'Edition fiche OC' ) ;
+ 
